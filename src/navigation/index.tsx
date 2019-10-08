@@ -12,6 +12,7 @@ import OnboardingStepFour from '../screens/onboarding/StepFour';
 import AppLoading from '../screens/loading/AppLoading';
 import TabBarIcon from '../components/TabNavigator/TabBarIcon';
 import DrawerComponent from '../components/DrawerNavigator/Drawer';
+import {Button} from 'react-native';
 
 const RootNavigation = createSwitchNavigator(
   {
@@ -22,19 +23,59 @@ const RootNavigation = createSwitchNavigator(
     '/onboarding': createStackNavigator({
       '/onboarding/one': {
         screen: OnboardingStepOne,
-        navigationOptions: {title: 'Step One'},
+        navigationOptions: ({navigation}) => {
+          return {
+            title: 'Step One',
+            headerRight: (
+              <Button
+                title="skip"
+                onPress={() => navigation.navigate('/app')}
+              />
+            ),
+          };
+        },
       },
       '/onboarding/two': {
         screen: OnboardingStepTwo,
-        navigationOptions: {title: 'Step Two'},
+        navigationOptions: ({navigation}) => {
+          return {
+            title: 'Step Two',
+            headerRight: (
+              <Button
+                title="skip"
+                onPress={() => navigation.navigate('/app')}
+              />
+            ),
+          };
+        },
       },
       '/onboarding/three': {
         screen: OnboardingStepThree,
-        navigationOptions: {title: 'Step Three'},
+        navigationOptions: ({navigation}) => {
+          return {
+            title: 'Step Three',
+            headerRight: (
+              <Button
+                title="skip"
+                onPress={() => navigation.navigate('/app')}
+              />
+            ),
+          };
+        },
       },
       '/onboarding/four': {
         screen: OnboardingStepFour,
-        navigationOptions: {title: 'Step Four'},
+        navigationOptions: ({navigation}) => {
+          return {
+            title: 'Step Four',
+            headerRight: (
+              <Button
+                title="skip"
+                onPress={() => navigation.navigate('/app')}
+              />
+            ),
+          };
+        },
       },
     }),
 
@@ -46,7 +87,17 @@ const RootNavigation = createSwitchNavigator(
             '/app/one': createStackNavigator({
               '/app/one/overview': {
                 screen: ScreenPlaceholder,
-                navigationOptions: {title: 'Tab One Overview'},
+                navigationOptions: ({navigation}) => {
+                  return {
+                    title: 'Tab One Overview',
+                    headerLeft: (
+                      <Button
+                        title="Menu"
+                        onPress={() => navigation.openDrawer()}
+                      />
+                    ),
+                  };
+                },
               },
               '/app/one/detail': {
                 screen: ScreenPlaceholder,
@@ -56,7 +107,17 @@ const RootNavigation = createSwitchNavigator(
             '/app/two': createStackNavigator({
               '/app/two/overview': {
                 screen: ScreenPlaceholder,
-                navigationOptions: {title: 'Tab Two Overview'},
+                navigationOptions: ({navigation}) => {
+                  return {
+                    title: 'Tab Two Overview',
+                    headerLeft: (
+                      <Button
+                        title="Menu"
+                        onPress={() => navigation.openDrawer()}
+                      />
+                    ),
+                  };
+                },
               },
               '/app/two/detail': {
                 screen: ScreenPlaceholder,
@@ -66,7 +127,17 @@ const RootNavigation = createSwitchNavigator(
             '/app/three': createStackNavigator({
               '/app/three/overview': {
                 screen: ScreenPlaceholder,
-                navigationOptions: {title: 'Tab Three Overview'},
+                navigationOptions: ({navigation}) => {
+                  return {
+                    title: 'Tab Three Overview',
+                    headerLeft: (
+                      <Button
+                        title="Menu"
+                        onPress={() => navigation.openDrawer()}
+                      />
+                    ),
+                  };
+                },
               },
               '/app/three/detail': {
                 screen: ScreenPlaceholder,
@@ -76,7 +147,17 @@ const RootNavigation = createSwitchNavigator(
             '/app/four': createStackNavigator({
               '/app/four/profile': {
                 screen: ScreenPlaceholder,
-                navigationOptions: {title: 'Tab Four Overview'},
+                navigationOptions: ({navigation}) => {
+                  return {
+                    title: 'Tab Four Overview',
+                    headerLeft: (
+                      <Button
+                        title="Menu"
+                        onPress={() => navigation.openDrawer()}
+                      />
+                    ),
+                  };
+                },
               },
             }),
           },

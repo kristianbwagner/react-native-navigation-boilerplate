@@ -7,8 +7,8 @@ interface Props {
 
 function CustomDrawerContentComponent({navigation}: Props) {
   return (
-    <ScrollView>
-      <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
+      <SafeAreaView>
         <Button
           title="Tab One"
           onPress={() => navigation.navigate('/app/one')}
@@ -26,7 +26,11 @@ function CustomDrawerContentComponent({navigation}: Props) {
           onPress={() => navigation.navigate('/app/four')}
         />
         <Button
-          title="Logout"
+          title="Onboarding"
+          onPress={() => navigation.navigate('/onboarding')}
+        />
+        <Button
+          title="Reload app"
           onPress={() => navigation.navigate('/loading')}
         />
       </SafeAreaView>
@@ -37,6 +41,8 @@ function CustomDrawerContentComponent({navigation}: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    borderRightWidth: 1,
+    borderRightColor: 'lightgrey',
   },
 });
 

@@ -10,7 +10,6 @@ function ScreenPlaceholder({navigation}: Props) {
   return (
     <View style={styles.container}>
       <Text>Screen {routeName}</Text>
-      <Button title="Open Drawer" onPress={() => navigation.openDrawer()} />
     </View>
   );
 }
